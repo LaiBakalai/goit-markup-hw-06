@@ -217,6 +217,7 @@ button {
 .button.button-primary:hover,
 .button.button-primary:focus {
    background-color: var(--pressed-state);
+   transition: background-color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.button-primary:active {
@@ -401,6 +402,7 @@ section.no-top-padding {
 .social-link:focus svg use {
    fill: var(--accent-color);
    cursor: pointer;
+   transition: fill var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* modal */
@@ -519,7 +521,7 @@ section.no-top-padding {
 
 .project-card:hover figcaption {
    transform: translateY(0);
-
+   transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*until here */
@@ -625,6 +627,13 @@ section.no-top-padding {
    width: 165px;
 }
 
+.subscribe-button:hover,
+.subscribe-button:focus {
+   background: var(--pressed-state);
+   transition: background var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
 .subscribe-form .form-input {
    width: 264px;
    height: 40px;
@@ -652,10 +661,7 @@ section.no-top-padding {
 .partners {
    display: flex;
    flex-wrap: wrap;
-   /*
-   margin-left: -30px;
-   margin-top: -30px;
-   */
+
 }
 
 .partners .item {
@@ -682,6 +688,7 @@ section.no-top-padding {
 .partners .link:focus {
    fill: var(--pressed-state);
    border: 2px solid var(--pressed-state);
+   transition: fill var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -735,9 +742,10 @@ label {
    transition: fill var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:hover+.icon,
+/*.form-input:hover+.icon,*/
 .form-input:focus+.icon {
    fill: var(--pressed-state);
+   transition: fill var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field .form-input,
@@ -767,12 +775,13 @@ label {
    resize:none;
 }
 
-.form-field .form-input:hover,
-.form-field .form-textarea:hover,
+/*.form-field .form-input:hover,
+.form-field .form-textarea:hover,*/
 .form-field .form-input:focus,
 .form-field .form-textarea:focus {
    outline: none;
    border-color: var(--pressed-state);
+   transition: border var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field .form-textarea::placeholder {
@@ -820,6 +829,7 @@ label {
 .form-field-checkbox a:hover,
 .form-field-checkbox a:focus {
    color: var(--pressed-state);
+   transition: color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #terms:checked~.checkbox-icon {
@@ -849,17 +859,30 @@ label {
 }
 
 .modal-send-button {
-   display: inline-flex;
-   padding: 16px 32px;
-   align-items: flex-start;
-   gap: 10px;
-
-   border-radius: 4px;
-   background: var(--primary-brand-color);
-   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-   color: var(--primary-white-color);
-
    display: block;
-   margin-right:auto;
-   margin-left: auto;
+      width: 169px;
+      height: 56px;
+      padding: 16px 32px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+   
+      background-color: var(--iris, #4d5ae5);
+      color: var(--white, #fff);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5em;
+      /* 150% */
+      letter-spacing: 0.64px;
+   
+      border: none;
+      cursor: pointer;
+   
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-send-button:hover,
+.modal-send-focus:focus {
+   background-color: var(--pressed-state);
 }
